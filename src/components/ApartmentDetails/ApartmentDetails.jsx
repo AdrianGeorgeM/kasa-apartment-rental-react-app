@@ -24,7 +24,8 @@ const ApartmentDetails = ({ id }) => {
 			<div className={styles.info}>
 				<h1 className={styles['info__header--title']}>Oops!</h1>
 				<p className={styles['info__header--location']}>
-					We're unable to find the apartment details right now. Please try again later.
+					We&apos;re unable to find the apartment details right now. Please try again
+					later.
 				</p>
 			</div>
 		);
