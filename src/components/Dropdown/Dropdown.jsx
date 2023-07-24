@@ -7,8 +7,10 @@ const Dropdown = ({ title, content }) => {
 	const [open, setOpen] = useState(false);
 	const dropdownRef = useRef(null);
 
-	const toggleList = useCallback(() => {
-		setOpen((prevState) => !prevState);
+	const toggleList = useCallback((event) => {
+		if (event.type === 'click') {
+			setOpen((prevState) => !prevState);
+		}
 	}, []);
 
 	useEffect(() => {
@@ -22,6 +24,7 @@ const Dropdown = ({ title, content }) => {
 				onClick={toggleList}
 				ref={dropdownRef}
 				aria-expanded={open}
+				aria-controls='dropdown-content'
 			>
 				<p>{title}</p>
 				<div className={styles.arrowContainer}>
@@ -34,11 +37,13 @@ const Dropdown = ({ title, content }) => {
 					/>
 				</div>
 			</button>
-			<p
+			<div
+				id='dropdown-content'
 				className={`${styles.dropdownList} ${open ? styles.dropOpen : styles.dropClose}`}
+				aria-hidden={!open}
 			>
 				{content}
-			</p>
+			</div>
 		</div>
 	);
 };

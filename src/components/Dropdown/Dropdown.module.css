@@ -14,6 +14,8 @@
   user-select: none;
   transition: background 0.3s ease, transform 0.3s ease;
   cursor: pointer;
+  font-size: 1.2em;
+  font-weight: 600;
 }
 
 .dropdownItemTitle:hover,
@@ -39,10 +41,10 @@
 .dropdownList {
   transform-origin: top;
   transform: scaleY(0);
-  transition: transform 0.3s ease;
+  transition: transform 0.3s ease, opacity 0.2s ease, max-height 0.2s ease-in-out;
   background: #F2F4F3;
-  width: 98%;
-  padding: 0; /* Set initial padding to 0 */
+  width: 100%; /* Changed from 98% to 100% */
+  padding: 0;
   border-radius: 0 0 8px 8px;
   color: #2F4858;
   font-size: 0.9rem;
@@ -57,4 +59,10 @@
   max-height: 200px; /* You might need to adjust this depending on your content */
   padding: 20px 15px;
   visibility: visible;
+  opacity: 1; /* Fully visible */
+  width: 100%;
+}
+
+.dropClose {
+  opacity: 0;  /* Fully transparent */
 }
