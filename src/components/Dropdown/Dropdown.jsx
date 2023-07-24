@@ -1,50 +1,44 @@
-import React, { useState } from 'react';
+import React, { useState, useRef, useEffect, useCallback } from 'react';
 import Image from 'next/image';
-import Link from 'next/link';
 import arrowRight from '/public/assets/arrowRight.svg';
 import styles from './Dropdown.module.css';
 
-const Dropdown = ({ title, page, content }) => {
+const Dropdown = ({ title, content }) => {
 	const [open, setOpen] = useState(false);
+	const dropdownRef = useRef(null);
 
-	const toggleList = () => {
-		setOpen(!open);
-	};
+	const toggleList = useCallback(() => {
+		setOpen((prevState) => !prevState);
+	}, []);
+
+	useEffect(() => {
+		if (open) dropdownRef.current.focus();
+	}, [open]);
 
 	return (
 		<div className={styles.dropdownItem}>
-			<div className={`${styles.dropdownItemTitle} ${page}`} onClick={toggleList}>
+			<button
+				className={`${styles.dropdownItemTitle} ${open && styles.open}`}
+				onClick={toggleList}
+				ref={dropdownRef}
+				aria-expanded={open}
+			>
 				<p>{title}</p>
 				<div className={styles.arrowContainer}>
 					<Image
 						src={arrowRight}
-						alt=''
-						className={`${styles.dropdownItemArrow} ${open ? styles.rotated : ''}`}
+						alt='Toggle dropdown'
+						className={`${styles.dropdownItemArrow} ${open && styles.rotated}`}
 						width={20}
 						height={20}
 					/>
 				</div>
-			</div>
-
-			{Array.isArray(page) ? (
-				<ul
-					className={`${styles.dropdownList} ${
-						open ? styles.dropOpen : styles.dropClose
-					}`}
-				>
-					{page.map((item, index) => (
-						<li key={index}>{item}</li>
-					))}
-				</ul>
-			) : (
-				<p
-					className={`${styles.dropdownList} ${
-						open ? styles.dropOpen : styles.dropClose
-					}`}
-				>
-					{content}
-				</p>
-			)}
+			</button>
+			<p
+				className={`${styles.dropdownList} ${open ? styles.dropOpen : styles.dropClose}`}
+			>
+				{content}
+			</p>
 		</div>
 	);
 };

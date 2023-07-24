@@ -1,65 +1,33 @@
-/* styles/Dropdowns.module.css */
-
-.collapse {
-  display: flex;
-  margin-top: 16.5px;
-  flex-wrap: wrap;
-}
-
-.dropdownItem {
-  flex-basis: 100%;
-}
-.dropdownList {
-  background: #f7f7f7;
-  width: 98%;
-  padding: 25px 12px;
-  border-radius: 0 0 5px 5px;
-  color: #ff6060;
-  font-size: 0.9rem;
-}
-
-.dropdown li {
-  margin-bottom: 6px;
-}
-
-.dropClose {
-  display: none;
-}
-
-.dropOpen {
-  display: open;
-}
-
 .dropdownItemTitle {
   background: #ff6060;
-  border-radius: 5px;
-  height: 30px;
-  font-family: Montserrat;
+  border-radius: 8px;
+  width: 100%;
+  height: 40px;
+  font-family: Montserrat, sans-serif;
   font-style: normal;
   font-weight: 500;
   color: #ffffff;
   display: flex;
   align-items: center;
-  position: relative;
-  display: flex;
   justify-content: space-between;
+  padding: 0 15px;
   user-select: none;
-}
-.dropdownItemTitle p {
-  margin-left: 11.5px;
+  transition: background 0.3s ease, transform 0.3s ease;
+  cursor: pointer;
 }
 
-.dropdownItemArrowUp {
-  margin-right: 11px;
-  user-select: none;
+.dropdownItemTitle:hover,
+.dropdownItemTitle.open {
+  background: #386771;
 }
-.dropdownItemArrowDown {
-  width: 26.5px;
-  margin-right: 19px;
+
+.dropdownItemTitle:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(47, 72, 88, 0.6);  /* Add a focus ring */
 }
+
 .dropdownItemArrow {
   width: 26.5px;
-  margin-right: 19px;
   user-select: none;
   transition: transform 0.3s ease;
 }
@@ -67,29 +35,26 @@
 .rotated {
   transform: rotate(90deg);
 }
-@media screen and (min-width: 1000px) {
-  .dropdownItem {
-    flex-basis: 48%;
-  }
-  .dropdownItemTitle {
-    height: 52px;
-    border-radius: 10px;
-  }
-  .dropdownItemTitle p {
-    margin-left: 20px;
-  }
-  .dropdownItemArrowUp {
-    width: 26.5px;
-    margin-right: 19px;
-  }
-  .dropdownItemArrowDown {
-    transform: rotate(180deg);
-    margin-right: 11px;
-    user-select: none;
-  }
-  .collapse {
-    margin-top: 24px;
-    flex-wrap: nowrap;
-    justify-content: space-between;
-  }
+
+.dropdownList {
+  transform-origin: top;
+  transform: scaleY(0);
+  transition: transform 0.3s ease;
+  background: #F2F4F3;
+  width: 98%;
+  padding: 0; /* Set initial padding to 0 */
+  border-radius: 0 0 8px 8px;
+  color: #2F4858;
+  font-size: 0.9rem;
+  max-height: 0;
+  overflow: hidden;
+  visibility: hidden;
+  margin: 0;
+}
+
+.dropOpen {
+  transform: scaleY(1);
+  max-height: 200px; /* You might need to adjust this depending on your content */
+  padding: 20px 15px;
+  visibility: visible;
 }
