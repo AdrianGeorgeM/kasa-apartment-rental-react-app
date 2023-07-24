@@ -18,20 +18,25 @@ const Star = ({ filled }) => (
 
 const ApartmentDetails = ({ id }) => {
 	const apartment = useMemo(() => data.find((datas) => datas.id === id), [id]);
-	console.log(apartment);
+
 	if (!apartment) {
-		// Render a fallback component, return null, or throw an error
-		return null;
+		return (
+			<div className={styles.info}>
+				<h1 className={styles['info__header--title']}>Oops!</h1>
+				<p className={styles['info__header--location']}>
+					We're unable to find the apartment details right now. Please try again later.
+				</p>
+			</div>
+		);
 	}
 
 	const {
-		title,
-		location,
-		tags,
-		host: { name, picture },
-		rating,
+		title = 'Unavailable',
+		location = 'Unavailable',
+		tags = ['No tags'],
+		host: { name = 'Unavailable', picture = 'Unavailable' } = {},
+		rating = 0,
 	} = apartment;
-	console.log(title, location, tags, name, picture, rating);
 
 	return (
 		<div className={styles.apartment}>
