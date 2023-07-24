@@ -23,6 +23,10 @@ function ImageSlider({ images }) {
 		});
 	};
 
+	const nextImageIndex = (currentImageIndex + 1) % images.length;
+	const prevImageIndex =
+		currentImageIndex > 0 ? currentImageIndex - 1 : images.length - 1;
+
 	return (
 		<div className={styles['slider-container']}>
 			<Image
@@ -31,6 +35,21 @@ function ImageSlider({ images }) {
 				alt='slide'
 				layout='fill'
 				objectFit='cover'
+				priority
+			/>
+			<Image
+				src={images[nextImageIndex]}
+				alt='Next slide'
+				layout='fill'
+				objectFit='cover'
+				style={{ display: 'none' }}
+			/>
+			<Image
+				src={images[prevImageIndex]}
+				alt='Previous slide'
+				layout='fill'
+				objectFit='cover'
+				style={{ display: 'none' }}
 			/>
 			<button
 				className={`${styles['slider-button']} ${styles['button-left']}`}
