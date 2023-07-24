@@ -7,7 +7,6 @@ import '../styles/Home.module.css';
 const Home = () => {
 	return (
 		<main className='home'>
-			<Header />
 			<Banner />
 			<Gallery />
 		</main>
