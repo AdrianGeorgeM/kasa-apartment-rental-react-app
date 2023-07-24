@@ -12,8 +12,8 @@ const Star = ({ filled }) => (
 		src={filled ? '/assets/star_filled.svg' : '/assets/star_blank.svg'}
 		alt='Star'
 		className={styles.star}
-		width={50}
-		height={50}
+		width={30}
+		height={30}
 	/>
 );
 
