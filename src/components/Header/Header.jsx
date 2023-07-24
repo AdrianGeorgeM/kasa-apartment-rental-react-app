@@ -2,28 +2,28 @@
 import React from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
-import styles from './Header.module.css';
+import './Header.module.css';
 
 const Header = () => {
 	return (
-		<header className={styles.header}>
+		<header className='header'>
 			<Image
 				src='/assets/header_logo.svg'
 				alt='Logo'
 				width={70}
 				height={70}
-				className={styles.headerLogo}
+				className='headerLogo'
 			/>
-			<nav className={styles.nav}>
-				<ul className={styles.navbarList}>
-					<li className={styles.navbarListItem}>
+			<nav className='nav'>
+				<ul className='navbarList'>
+					<li className='navbarListItem'>
 						<Link href='/'>
-							<span className={styles.navbarLink}>Home</span>
+							<span className='navbarLink'>Home</span>
 						</Link>
 					</li>
-					<li className={styles.navbarListItem}>
+					<li className='navbarListItem'>
 						<Link href='/about'>
-							<span className={styles.navbarLink}>About</span>
+							<span className='navbarLink'>About</span>
 						</Link>
 					</li>
 				</ul>
