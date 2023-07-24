@@ -19,6 +19,10 @@ const Star = ({ filled }) => (
 const ApartmentDetails = ({ id }) => {
 	const apartment = useMemo(() => data.find((datas) => datas.id === id), [id]);
 	console.log(apartment);
+	if (!apartment) {
+		// Render a fallback component, return null, or throw an error
+		return null; 
+
 	const {
 		title,
 		location,
