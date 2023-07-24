@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useCallback } from 'react';
 import Image from 'next/image';
 import styles from './ImageSlider.module.css';
 import arrowLeft from '/public/assets/arrowLeft.svg';
@@ -7,59 +7,45 @@ import arrowRight from '/public/assets/arrowRight.svg';
 function ImageSlider({ images }) {
 	const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
-	const nextImage = () => {
-		setCurrentImageIndex((prevIndex) => {
-			return (prevIndex + 1) % images.length;
-		});
-	};
+	const nextImage = useCallback(() => {
+		setCurrentImageIndex((prevIndex) => (prevIndex + 1) % images.length);
+	}, [images]);
 
-	const prevImage = () => {
+	const prevImage = useCallback(() => {
 		setCurrentImageIndex((prevIndex) => {
 			if (prevIndex === 0) {
-				return images.length - 1; // go to the last image
+				return images.length - 1;
 			} else {
 				return prevIndex - 1;
 			}
 		});
-	};
-
-	const nextImageIndex = (currentImageIndex + 1) % images.length;
-	const prevImageIndex =
-		currentImageIndex > 0 ? currentImageIndex - 1 : images.length - 1;
+	}, [images]);
 
 	return (
 		<div className={styles['slider-container']}>
-			<Image
-				className={styles['slider-image']}
-				src={images[currentImageIndex]}
-				alt='slide'
-				layout='fill'
-				objectFit='cover'
-				priority
-			/>
-			<Image
-				src={images[nextImageIndex]}
-				alt='Next slide'
-				layout='fill'
-				objectFit='cover'
-				style={{ display: 'none' }}
-			/>
-			<Image
-				src={images[prevImageIndex]}
-				alt='Previous slide'
-				layout='fill'
-				objectFit='cover'
-				style={{ display: 'none' }}
-			/>
+			{images.map((img, index) => (
+				<div
+					key={img} // using img as key
+					className={
+						index === currentImageIndex
+							? `${styles['slider-image']} ${styles['slider-image-active']}`
+							: styles['slider-image']
+					}
+				>
+					<Image src={img} alt={`Slide ${index + 1}`} layout='fill' objectFit='cover' />
+				</div>
+			))}
 			<button
 				className={`${styles['slider-button']} ${styles['button-left']}`}
 				onClick={prevImage}
+				aria-label='Previous slide'
 			>
 				<Image src={arrowLeft} alt='Previous' width={40} height={40} />
 			</button>
 			<button
 				className={`${styles['slider-button']} ${styles['button-right']}`}
 				onClick={nextImage}
+				aria-label='Next slide'
 			>
 				<Image src={arrowRight} alt='Next' width={40} height={40} />
 			</button>
