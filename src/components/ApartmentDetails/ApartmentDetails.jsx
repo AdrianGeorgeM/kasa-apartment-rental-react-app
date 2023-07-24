@@ -21,7 +21,8 @@ const ApartmentDetails = ({ id }) => {
 	console.log(apartment);
 	if (!apartment) {
 		// Render a fallback component, return null, or throw an error
-		return null; 
+		return null;
+	}
 
 	const {
 		title,
