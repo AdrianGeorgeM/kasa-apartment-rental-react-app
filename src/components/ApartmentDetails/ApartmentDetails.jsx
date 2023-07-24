@@ -3,6 +3,7 @@ import Image from 'next/image';
 import data from '/src/data/data.json';
 import styles from './ApartmentDetails.module.css';
 import Tag from '../Tag/Tag';
+import ImageSlider from '../ImageSlider/ImageSlider';
 
 const STAR_RANGE = Array(5).fill(null);
 
@@ -34,6 +35,7 @@ const ApartmentDetails = ({ id }) => {
 	const {
 		title = 'Unavailable',
 		location = 'Unavailable',
+		pictures = [],
 		tags = ['No tags'],
 		host: { name = 'Unavailable', picture = 'Unavailable' } = {},
 		rating = 0,
@@ -41,6 +43,7 @@ const ApartmentDetails = ({ id }) => {
 
 	return (
 		<div className={styles.apartment}>
+			<ImageSlider images={pictures} />
 			<main>
 				<div className={styles.info}>
 					<div className={styles['info__header']}>
