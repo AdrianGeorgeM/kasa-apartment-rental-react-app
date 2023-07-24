@@ -1,0 +1,18 @@
+.aboutMain {
+  list-style: none;
+  margin-left: 20px;
+  margin-right: 20px;
+  padding: 0;
+}
+.aboutMain li {
+  margin-top: 20px;
+}
+@media screen and (min-width: 1000px) {
+  .aboutMain {
+    margin-left: 200px;
+    margin-right: 200px;
+  }
+  .aboutMain li {
+    margin-top: 33px;
+  }
+}
