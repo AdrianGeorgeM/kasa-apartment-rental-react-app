@@ -1,7 +1,7 @@
 // pages/About/About.jsx
 import React from 'react';
-import Layout from '../../src/components/Layout';
-import styles from './About.module.css';
+import Layout from '../src/components/Layout';
+import styles from '..About.module.css';
 
 const About = () => {
 	return (
