@@ -1,4 +1,3 @@
-// pages/About/About.jsx
 import React from 'react';
 import Layout from '../src/components/Layout';
 import styles from '../styles/About.module.css';
@@ -20,13 +19,14 @@ const About = () => {
 	return (
 		<div>
 			<Banner page='about' />
-			<ul className={styles.aboutMain}>
-				{Object.keys(textInput).map((key) => (
-					<li key={key}>
-						<Dropdown title={key} content={textInput[key]} />
-					</li>
-				))}
-			</ul>
+			<div className={styles.aboutMain}>
+				<h2 className={styles.sectionTitle}>Why Choose Kasa?</h2>
+				<div className={styles.dropdownContainer}>
+					{Object.keys(textInput).map((key) => (
+						<Dropdown key={key} title={key} content={textInput[key]} />
+					))}
+				</div>
+			</div>
 		</div>
 	);
 };

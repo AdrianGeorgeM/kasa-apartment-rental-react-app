@@ -57,7 +57,16 @@
   width: 26.5px;
   margin-right: 19px;
 }
+.dropdownItemArrow {
+  width: 26.5px;
+  margin-right: 19px;
+  user-select: none;
+  transition: transform 0.3s ease;
+}
 
+.rotated {
+  transform: rotate(100deg);
+}
 @media screen and (min-width: 1000px) {
   .dropdownItem {
     flex-basis: 48%;

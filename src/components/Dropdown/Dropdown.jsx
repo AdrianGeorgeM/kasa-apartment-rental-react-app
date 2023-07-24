@@ -15,15 +15,15 @@ const Dropdown = ({ title, page, content }) => {
 		<div className={styles.dropdownItem}>
 			<div className={`${styles.dropdownItemTitle} ${page}`} onClick={toggleList}>
 				<p>{title}</p>
-				<Image
-					src={arrowRight}
-					alt=''
-					className={
-						open === false ? styles.dropdownItemArrowUp : styles.dropdownItemArrowDown
-					}
-					width={20}
-					height={20}
-				/>
+				<div className={styles.arrowContainer}>
+					<Image
+						src={arrowRight}
+						alt=''
+						className={`${styles.dropdownItemArrow} ${open ? styles.rotated : ''}`}
+						width={20}
+						height={20}
+					/>
+				</div>
 			</div>
 
 			{Array.isArray(page) ? (

@@ -1,18 +1,37 @@
+/* styles/About.module.css */
+
 .aboutMain {
-  list-style: none;
-  margin-left: 20px;
-  margin-right: 20px;
-  padding: 0;
+  margin: 20px;
 }
-.aboutMain li {
-  margin-top: 20px;
+
+.sectionTitle {
+  text-align: center;
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 30px;
+  color: #ff6060;
 }
+
+.dropdownContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
 @media screen and (min-width: 1000px) {
   .aboutMain {
     margin-left: 200px;
     margin-right: 200px;
   }
-  .aboutMain li {
-    margin-top: 33px;
+
+  .sectionTitle {
+    font-size: 28px;
+    margin-bottom: 40px;
+  }
+
+  .dropdownContainer {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
   }
 }
