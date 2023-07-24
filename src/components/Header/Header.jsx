@@ -7,13 +7,15 @@ import styles from './Header.module.css';
 const Header = () => {
 	return (
 		<header className={styles.header}>
-			<Image
-				src='/assets/header_logo.svg'
-				alt='Logo'
-				width={70}
-				height={70}
-				className={styles.headerLogo}
-			/>
+			<Link href='/'>
+				<Image
+					src='/assets/header_logo.svg'
+					alt='Logo'
+					width={70}
+					height={70}
+					className={styles.headerLogo}
+				/>
+			</Link>
 			<nav className={styles.nav}>
 				<ul className={styles.navbarList}>
 					<li className={styles.navbarListItem}>
