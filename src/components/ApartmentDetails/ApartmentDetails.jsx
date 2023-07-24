@@ -55,7 +55,7 @@ const ApartmentDetails = ({ id }) => {
 						<div className={styles['info__host']}>
 							<p className={styles['info__host--name']}>{name}</p>
 							<div className={styles['info__host--picture']}>
-								<Image src={`/assets/${picture}`} alt='Host' width={500} height={500} />
+								<Image src={picture} alt='Host' width={500} height={500} />
 							</div>
 						</div>
 						<div className={styles['info__rating']}>
