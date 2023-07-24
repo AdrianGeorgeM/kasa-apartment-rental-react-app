@@ -2,6 +2,7 @@ import React, { useMemo } from 'react';
 import Image from 'next/image';
 import data from '/src/data/data.json';
 import styles from './ApartmentDetails.module.css';
+import Tag from '../Tag/Tag';
 
 const STAR_RANGE = Array(5).fill(null);
 
@@ -15,11 +16,9 @@ const Star = ({ filled }) => (
 	/>
 );
 
-const Tag = ({ tag }) => <span className={styles.tag}>{tag}</span>;
-
 const ApartmentDetails = ({ id }) => {
 	const apartment = useMemo(() => data.find((datas) => datas.id === id), [id]);
-
+	console.log(apartment);
 	const {
 		title,
 		location,
@@ -27,6 +26,7 @@ const ApartmentDetails = ({ id }) => {
 		host: { name, picture },
 		rating,
 	} = apartment;
+	console.log(title, location, tags, name, picture, rating);
 
 	return (
 		<div className={styles.apartment}>
