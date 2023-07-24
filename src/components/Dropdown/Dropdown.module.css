@@ -65,7 +65,7 @@
 }
 
 .rotated {
-  transform: rotate(100deg);
+  transform: rotate(90deg);
 }
 @media screen and (min-width: 1000px) {
   .dropdownItem {

@@ -4,7 +4,7 @@ import data from '/src/data/data.json';
 import styles from './ApartmentDetails.module.css';
 import Tag from '../Tag/Tag';
 import ImageSlider from '../ImageSlider/ImageSlider';
-
+import Dropdown from '../Dropdown/Dropdown';
 const STAR_RANGE = Array(5).fill(null);
 
 const Star = ({ filled }) => (
@@ -70,6 +70,7 @@ const ApartmentDetails = ({ id }) => {
 					</div>
 				</div>
 			</main>
+			<Dropdown title='Description' content={apartment.description} />
 		</div>
 	);
 };
