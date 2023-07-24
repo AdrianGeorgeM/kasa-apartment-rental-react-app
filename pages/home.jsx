@@ -1,11 +1,16 @@
 import React from 'react';
-import styles from '../styles/Home.module.css';
+import Header from '@/src/components/Header/Header';
+import Banner from '@/src/components/Banner/Banner';
+import Gallery from '../pages/gallery';
+import '../styles/Home.module.css';
+
 const Home = () => {
 	return (
-		<div className={styles.homeContent}>
-			<h1>Welcome to the Home page!</h1>
-			<p>This is the content of the Home page.</p>
-		</div>
+		<main className='home'>
+			<Header />
+			<Banner />
+			<Gallery />
+		</main>
 	);
 };
 
