@@ -1,0 +1,117 @@
+.info {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 15px;
+}
+.info__header {
+  flex-basis: 100%;
+}
+.info__header--title {
+  margin: 0;
+  font-family: Montserrat;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 26px;
+  color: #ff6060;
+}
+.info__header--location {
+  margin: 0;
+  font-family: Montserrat;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 20px;
+  color: #ff6060;
+}
+
+.intro__header--tags {
+  display: flex;
+  flex-wrap: wrap;
+}
+@media screen and (min-width: 1000px) {
+  .info {
+    margin-top: 30px;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+  }
+  .info__header {
+    flex-basis: auto;
+  }
+  .info__header--title {
+    font-size: 36px;
+    line-height: 51px;
+  }
+  .info__header--location {
+    margin: 5px 0 0 0;
+    font-size: 18px;
+    line-height: 26px;
+  }
+}
+/* profile */
+
+.info__profile {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  flex-basis: 100%;
+  justify-content: space-between;
+  margin-top: 16px;
+}
+.info__host {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.info__host--name {
+  font-family: Montserrat;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 17px;
+  text-align: right;
+  color: #ff6060;
+  margin: 0 10.5px 0 0;
+  width: 70px;
+}
+.info__host--picture img {
+  object-fit: cover;
+  width: 32px;
+  height: 32px;
+  border-radius: 50px;
+}
+
+.info__rating {
+  display: flex;
+  order: -1;
+}
+
+@media screen and (min-width: 1000px) {
+  .info__profile {
+    flex-basis: auto;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    align-self: flex-start;
+    margin-top: 0;
+  }
+  .info__host {
+    flex-wrap: nowrap;
+    align-items: center;
+    justify-content: flex-end;
+    width: 100%;
+  }
+  .info__host--name {
+    font-size: 18px;
+    line-height: 26px;
+    width: 93px;
+  }
+  .info__host--picture img {
+    width: 62px;
+    height: 64px;
+  }
+  .info__rating {
+    order: 0;
+    margin-top: 24px;
+  }
+}

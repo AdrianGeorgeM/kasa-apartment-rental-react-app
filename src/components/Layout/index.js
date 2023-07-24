@@ -1,13 +1,9 @@
+// Layout/index.js
+import React from 'react';
 import Banner from '../Banner/Banner';
 import Header from '../Header/Header';
 import Gallery from '@/pages/gallery';
 
-const Layout = ({ children }) => (
-	<div>
-		<Header />
-		<Banner />
-		<Gallery />
-	</div>
-);
+const Layout = ({ children }) => <div>{children}</div>;
 
 export default Layout;
