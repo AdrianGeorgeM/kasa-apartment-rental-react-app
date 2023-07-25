@@ -1,10 +1,12 @@
 @keyframes elegantRainbow {
-	0%, 100% { color: #6c3483; }
-	20% { color: #2874a6; }
-	40% { color: #148f77; }
-	60% { color: #82e0aa; }
-	80% { color: #f4d03f; }
+	0%, 100% { color: #FF0000; } /* Red */
+	20% { color: #FF7F00; } /* Orange */
+	40% { color: #FFFF00; } /* Yellow */
+	60% { color: #00FF00; } /* Green */
+	80% { color: #0000FF; } /* Blue */
+    90% { color: #4B0082; } /* Indigo */
 }
+
 
 @keyframes pulse {
 	0%, 100% { transform: scale(1); }
