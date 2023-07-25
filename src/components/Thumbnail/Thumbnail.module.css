@@ -40,7 +40,6 @@
 
 .card:hover .cardImage img {
 	transform: scale(1.1);
-	transition: transform 0.3s ease-in-out;
 }
 
 .cardTitle {
@@ -71,21 +70,16 @@
 	font-size: 30px;
 	color: #f00;
 	cursor: pointer;
-	transition: color 0.3s ease-in-out, opacity 0.3s ease-in-out;
 	width: 30px;
 	height: 30px;
 }
 
 .favoriteButton .heartBorder, .favoriteButton .heartFill {
 	fill: none;
-	stroke: #f00;
+	stroke: currentColor;
 	stroke-width: 2;
 	width: 100%;
 	height: 100%;
-}
-
-.favoriteButton .heartFill {
-	transition: fill 0.3s ease-in-out;
 }
 
 .favoriteButton:hover .heartFill {
@@ -95,5 +89,4 @@
 
 .card:hover .favoriteButton {
 	animation: elegantRainbow 2s linear infinite;
-	opacity: 1;
 }
