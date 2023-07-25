@@ -4,6 +4,8 @@ import footer_logo from '/public/assets/footer_logo.svg';
 import styles from './Footer.module.css';
 
 const Footer = () => {
+	const year = new Date().getFullYear();
+
 	return (
 		<footer className={styles.footer}>
 			<Link href='/'>
@@ -15,7 +17,8 @@ const Footer = () => {
 					height={36}
 				/>
 			</Link>
-			<p className={styles.footer__text}>© 2023 Kasa. All rights reserved.</p>
+			<div className={styles.socialMediaIcons}></div>
+			<p className={styles.footer__text}>© {year} Designed and Developed by Adrian</p>
 		</footer>
 	);
 };
