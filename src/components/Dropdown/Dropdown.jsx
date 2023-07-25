@@ -1,6 +1,4 @@
 import React, { useState, useRef, useCallback } from 'react';
-import Image from 'next/image';
-import arrowRight from '/public/assets/arrowRight.svg';
 import styles from './Dropdown.module.css';
 
 const Dropdown = ({ title, content }) => {
