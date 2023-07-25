@@ -49,6 +49,9 @@ function ImageSlider({ images }) {
 			>
 				<Image src={arrowRight} alt='Next' width={40} height={40} />
 			</button>
+			<div className={styles['slider-counter']}>
+				{currentImageIndex + 1} / {images.length}
+			</div>
 		</div>
 	);
 }
