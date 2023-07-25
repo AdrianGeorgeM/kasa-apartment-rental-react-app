@@ -23,8 +23,8 @@ const ApartmentDetails = ({ id }) => {
 	if (!apartment) {
 		return (
 			<div className={styles.info}>
-				<h1 className={styles['info__header--title']}>Oops!</h1>
-				<p className={styles['info__header--location']}>
+				<h1 className={styles.infoHeaderTitle}>Oops!</h1>
+				<p className={styles.infoHeaderLocation}>
 					We&apos;re unable to find the apartment details right now. Please try again
 					later.
 				</p>
@@ -46,23 +46,23 @@ const ApartmentDetails = ({ id }) => {
 			<ImageSlider images={pictures} />
 			<main>
 				<div className={styles.info}>
-					<div className={styles['info__header']}>
-						<h1 className={styles['info__header--title']}>{title}</h1>
-						<p className={styles['info__header--location']}>{location}</p>
-						<div className={styles['intro__header--tags']}>
+					<div className={styles.infoHeader}>
+						<h1 className={styles.infoHeaderTitle}>{title}</h1>
+						<p className={styles.infoHeaderLocation}>{location}</p>
+						<div className={styles.introHeaderTags}>
 							{tags.map((tag, index) => (
 								<Tag key={`tag-${index}`} tag={tag} />
 							))}
 						</div>
 					</div>
-					<div className={styles['info__profile']}>
-						<div className={styles['info__host']}>
-							<p className={styles['info__host--name']}>{name}</p>
-							<div className={styles['info__host--picture']}>
+					<div className={styles.infoProfile}>
+						<div className={styles.infoHost}>
+							<p className={styles.infoHostName}>{name}</p>
+							<div className={styles.infoHostPicture}>
 								<Image src={picture} alt='Host' width={500} height={500} />
 							</div>
 						</div>
-						<div className={styles['info__rating']}>
+						<div className={styles.infoRating}>
 							{STAR_RANGE.map((_, index) => (
 								<Star key={`star-${index}`} filled={index < rating} />
 							))}
