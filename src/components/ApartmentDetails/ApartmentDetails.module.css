@@ -62,6 +62,7 @@
   flex-basis: 100%;
   justify-content: space-between;
   margin-top: 16px;
+  margin-bottom: 16px;
 }
 .info__host {
   display: flex;

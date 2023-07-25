@@ -1,8 +1,8 @@
+/* components/About.js */
 import React from 'react';
-import Layout from '../src/components/Layout';
-import styles from '../styles/About.module.css';
 import Banner from '../src/components/Banner/Banner';
 import Dropdown from '../src/components/Dropdown/Dropdown';
+import styles from '../styles/About.module.css';
 
 const About = () => {
 	const textInput = {
@@ -17,15 +17,13 @@ const About = () => {
 	};
 
 	return (
-		<div>
+		<div className={styles.aboutContainer}>
 			<Banner page='about' />
-			<div className={styles.aboutMain}>
-				<h2 className={styles.sectionTitle}>Why Choose Kasa?</h2>
-				<div className={styles.dropdownContainer}>
-					{Object.keys(textInput).map((key) => (
-						<Dropdown key={key} title={key} content={textInput[key]} />
-					))}
-				</div>
+			<h2 className={styles.sectionTitle}>Why Choose Kasa?</h2>
+			<div className={styles.dropdownContainer}>
+				{Object.keys(textInput).map((key) => (
+					<Dropdown key={key} title={key} content={textInput[key]} />
+				))}
 			</div>
 		</div>
 	);
