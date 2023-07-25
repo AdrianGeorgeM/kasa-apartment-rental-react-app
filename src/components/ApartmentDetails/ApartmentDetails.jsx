@@ -1,4 +1,5 @@
-import React, { useMemo } from 'react';
+import React, { useMemo, useEffect } from 'react';
+import { useRouter } from 'next/router';
 import Image from 'next/image';
 import data from '/src/data/data.json';
 import styles from './ApartmentDetails.module.css';
@@ -18,20 +19,18 @@ const Star = ({ filled }) => (
 );
 
 const ApartmentDetails = ({ id }) => {
+	const router = useRouter();
 	const apartment = useMemo(() => data.find((datas) => datas.id === id), [id]);
 
-	if (!apartment) {
-		return (
-			<div className={styles.info}>
-				<h1 className={styles.infoHeaderTitle}>Oops!</h1>
-				<p className={styles.infoHeaderLocation}>
-					We&apos;re unable to find the apartment details right now. Please try again
-					later.
-				</p>
-			</div>
-		);
-	}
+	useEffect(() => {
+		if (!apartment) {
+			router.push('/404');
+		}
+	}, [apartment, router]);
 
+	if (!apartment) {
+		return null;
+	}
 	const {
 		title = 'Unavailable',
 		location = 'Unavailable',

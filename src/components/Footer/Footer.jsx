@@ -8,7 +8,7 @@ const Footer = () => {
 
 	return (
 		<footer className={styles.footer}>
-			<Link href='/'>
+			<Link href='/footer'>
 				<Image
 					src={footer_logo}
 					alt='Footer Logo'

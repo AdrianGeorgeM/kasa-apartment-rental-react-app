@@ -1,0 +1,44 @@
+.error-main {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  font-family: Montserrat;
+  font-style: normal;
+  color: #ff6060;
+
+}
+
+.error__title {
+  text-align: center;
+  flex-basis: 100%;
+  font-size: 96px;
+  line-height: 137px;
+  font-weight: bold;
+  margin: 0;
+}
+
+.error-tagline {
+  text-align: center;
+  flex-basis: 100%;
+  font-size: 18px;
+  line-height: 26px;
+  margin: 11px 0 0 0;
+  padding: 0 80px;
+}
+
+.error__link {
+  margin-top: 32px;
+  color: #ff6060;
+  font-size: 14px;
+  line-height: 20px;
+  text-decoration: none;
+  border: 2px solid #ff6060;
+  border-radius: 4px;
+  padding: 10px 20px;
+  transition: background-color 0.3s ease-in-out;
+}
+
+.error__link:hover {
+  background-color: #ff6060;
+  color: white;
+}
