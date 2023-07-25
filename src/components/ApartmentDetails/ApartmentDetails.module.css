@@ -1,10 +1,10 @@
 .apartment{
   width: 90%;
   margin: 2rem auto;
-  background: #F2F4F3;
+  background: linear-gradient(135deg, #F2F4F3 0%, #EAEDED 100%);
   padding: 1rem;
   border-radius: 8px;
-  box-shadow: 0px 3px 6px rgba(0,0,0,0.16);
+  box-shadow: 0px 3px 16px rgba(0,0,0,0.16);
   font-family: 'Poppins', sans-serif;
 }
 
@@ -12,7 +12,7 @@
   display: grid;
   grid-template-columns: 1fr;
   grid-gap: 2rem;
-  margin-top: 1.5rem;
+  margin-top: 2.5rem;
 }
 
 .infoHeader {
@@ -20,11 +20,10 @@
   flex-direction: column;
  align-items: flex-start;
   justify-content: center;
-
 }
 
 .infoHeaderTitle {
-  font-size: 1.6rem;
+  font-size: 2rem;
   font-weight: 700;
   color: #1A535C;
   text-transform: uppercase;
@@ -43,7 +42,7 @@
   flex-wrap: wrap;
   justify-content: center;
   gap: 0.5rem;
-  margin-top: 1.5rem;
+  margin-top: 2rem;
   margin-bottom: 20px;
 }
 
@@ -51,7 +50,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-top: 2rem;
+  margin-top: 3rem;
 }
 
 .infoHost {
@@ -61,7 +60,7 @@
 }
 
 .infoHostName {
-  font-size: 1rem;
+  font-size: 1.2rem;
   font-weight: 500;
   color: #2F4858;
   margin-top: 1rem;
@@ -69,8 +68,8 @@
 
 .infoHostPicture img {
   border-radius: 50%;
-  width: 80px;
-  height: 80px;
+  width: 100px;
+  height: 100px;
   object-fit: cover;
 }
 
@@ -78,7 +77,7 @@
   display: flex;
   justify-content: center;
   gap: 0.5rem;
-  margin-top: 1rem;
+  margin-top: 2rem;
 }
 
 .star {
@@ -87,7 +86,7 @@
 }
 
 .star:hover {
-  transform: scale(1.2);
+  transform: scale(1.4);
 }
 
 @media screen and (min-width: 768px) {
@@ -96,7 +95,7 @@
   }
 
   .infoHeaderTitle {
-    font-size: 2rem;
+    font-size: 2.5rem;
   }
 
   .infoHeaderLocation {
@@ -104,11 +103,11 @@
   }
 
   .infoHostName {
-    font-size: 1.2rem;
+    font-size: 1.3rem;
   }
 
   .infoHostPicture img {
-    width: 100px;
-    height: 100px;
+    width: 120px;
+    height: 120px;
   }
 }
