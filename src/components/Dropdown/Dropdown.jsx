@@ -1,4 +1,4 @@
-import React, { useState, useRef, useEffect, useCallback } from 'react';
+import React, { useState, useRef, useCallback } from 'react';
 import Image from 'next/image';
 import arrowRight from '/public/assets/arrowRight.svg';
 import styles from './Dropdown.module.css';
@@ -8,20 +8,11 @@ const Dropdown = ({ title, content }) => {
 	const dropdownRef = useRef(null);
 	const contentRef = useRef(null);
 
-	const toggleList = useCallback(
-		(event) => {
-			if (event.type === 'click') {
-				setOpen((prevState) => !prevState);
-				if (!open && contentRef.current) {
-					contentRef.current.scrollIntoView({ behavior: 'smooth' });
-				}
-			}
-		},
-		[open]
-	);
-
-	useEffect(() => {
-		if (open) dropdownRef.current.focus();
+	const toggleList = useCallback(() => {
+		setOpen((prevState) => !prevState);
+		if (!open && contentRef.current) {
+			contentRef.current.scrollIntoView({ behavior: 'smooth' });
+		}
 	}, [open]);
 
 	return (
