@@ -16,16 +16,18 @@
   cursor: pointer;
   font-size: 1.2em;
   font-weight: 600;
+  box-shadow: 0px 3px 6px rgba(0,0,0,0.16); 
 }
 
 .dropdownItemTitle:hover,
 .dropdownItemTitle.open {
   background: #386771;
+  transform: scale(1.05); 
 }
 
 .dropdownItemTitle:focus {
   outline: none;
-  box-shadow: 0 0 0 3px rgba(47, 72, 88, 0.6);  /* Add a focus ring */
+  box-shadow: 0 0 0 3px rgba(47, 72, 88, 0.6); 
 }
 
 .dropdownItemArrow {
@@ -43,7 +45,7 @@
   transform: scaleY(0);
   transition: transform 0.3s ease, opacity 0.2s ease, max-height 0.2s ease-in-out;
   background: #F2F4F3;
-  width: 100%; /* Changed from 98% to 100% */
+  width: 100%; 
   padding: 0;
   border-radius: 0 0 8px 8px;
   color: #2F4858;
@@ -52,17 +54,30 @@
   overflow: hidden;
   visibility: hidden;
   margin: 0;
+  box-shadow: 0px 3px 6px rgba(0,0,0,0.16);  
 }
 
 .dropOpen {
   transform: scaleY(1);
-  max-height: 200px; /* You might need to adjust this depending on your content */
+  max-height: 200px;
   padding: 20px 15px;
   visibility: visible;
-  opacity: 1; /* Fully visible */
+  opacity: 1;
   width: 100%;
+  animation: bounce 1s; 
 }
 
 .dropClose {
-  opacity: 0;  /* Fully transparent */
+  opacity: 0;
+}
+
+/* Bounce animation */
+@keyframes bounce {
+  0% { transform: scale(1, 1); }
+  10% { transform: scale(1.1, 0.9); }
+  30% { transform: scale(0.9, 1.1); }
+  50% { transform: scale(1.05, 0.95); }
+  57% { transform: scale(1, 1); }
+  64% { transform: scale(1.05, 0.95); }
+  70% { transform: scale(1, 1); }
 }
