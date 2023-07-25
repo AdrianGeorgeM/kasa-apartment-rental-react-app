@@ -1,16 +1,5 @@
 /* Reset default margins and padding */
-body,
-h1, h2, h3, h4, h5, h6,
-p,
-ul, ol,
-li,
-figure,
-figcaption,
-blockquote,
-dl, dd, dt {
-  margin: 0;
-  padding: 0;
-}
+
 
 /* Set default font family and size */
 body {
@@ -21,6 +10,8 @@ body {
 /* Apply default box-sizing to all elements */
 * {
   box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
 /* Remove list styles and add some spacing between list items */
@@ -28,23 +19,10 @@ ul, ol {
   list-style: none;
 }
 
-li {
-  margin-bottom: 8px;
-}
 
 /* Add default styles for links */
 a {
   text-decoration: none;
-  color: #007bff; /* Blue link color */
+
 }
 
-/* Add some basic styles for headings */
-h1, h2, h3, h4, h5, h6 {
-  font-weight: bold;
-  margin-bottom: 16px;
-}
-
-/* Add default styles for paragraphs */
-p {
-  margin-bottom: 16px;
-}

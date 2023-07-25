@@ -2,6 +2,8 @@
 
 import React from 'react';
 import Layout from '../src/components/Layout';
+// src/index.js or src/App.js
+import '../styles/globals.css';
 
 const App = ({ Component, pageProps }) => {
 	return (
