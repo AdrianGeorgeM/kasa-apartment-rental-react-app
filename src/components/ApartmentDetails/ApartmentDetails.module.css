@@ -50,7 +50,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-top: 3rem;
+  margin-bottom: 30px;
 }
 
 .infoHost {
@@ -89,6 +89,7 @@
   transform: scale(1.4);
 }
 
+/* Styles for screens with a minimum width of 768px (tablets and larger) */
 @media screen and (min-width: 768px) {
   .info {
     grid-template-columns: 2fr 1fr;
@@ -110,4 +111,27 @@
     width: 120px;
     height: 120px;
   }
+}
+@media screen and (max-width: 767px) {
+  .info {
+    grid-template-columns: 1fr;
+  }
+
+  .infoHeaderTitle {
+    font-size: 1.5rem;
+  }
+
+  .infoHeaderLocation {
+    font-size:1.5rem;
+  }
+
+  .infoHostName {
+    font-size: 1.5rem;
+  }
+
+  .infoHostPicture img {
+    width: 100px;
+    height: 100px;
+  }
+
 }
