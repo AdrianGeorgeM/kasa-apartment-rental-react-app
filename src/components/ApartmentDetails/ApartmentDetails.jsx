@@ -1,5 +1,4 @@
-import React, { useMemo, useEffect } from 'react';
-import { useRouter } from 'next/router';
+import React, { useMemo } from 'react';
 import Image from 'next/image';
 import data from '/src/data/data.json';
 import styles from './ApartmentDetails.module.css';
@@ -7,6 +6,7 @@ import Tag from '../Tag/Tag';
 import ImageSlider from '../ImageSlider/ImageSlider';
 import Dropdown from '../Dropdown/Dropdown';
 const STAR_RANGE = Array(5).fill(null);
+import Error404 from '../Error404/error404';
 
 const Star = ({ filled }) => (
 	<Image
@@ -19,18 +19,12 @@ const Star = ({ filled }) => (
 );
 
 const ApartmentDetails = ({ id }) => {
-	const router = useRouter();
 	const apartment = useMemo(() => data.find((datas) => datas.id === id), [id]);
 
-	useEffect(() => {
-		if (!apartment) {
-			router.push('/404');
-		}
-	}, [apartment, router]);
-
 	if (!apartment) {
-		return null;
+		return <Error404 />;
 	}
+
 	const {
 		title = 'Unavailable',
 		location = 'Unavailable',
