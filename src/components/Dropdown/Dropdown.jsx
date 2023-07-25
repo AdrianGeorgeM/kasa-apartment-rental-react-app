@@ -6,12 +6,19 @@ import styles from './Dropdown.module.css';
 const Dropdown = ({ title, content }) => {
 	const [open, setOpen] = useState(false);
 	const dropdownRef = useRef(null);
+	const contentRef = useRef(null);
 
-	const toggleList = useCallback((event) => {
-		if (event.type === 'click') {
-			setOpen((prevState) => !prevState);
-		}
-	}, []);
+	const toggleList = useCallback(
+		(event) => {
+			if (event.type === 'click') {
+				setOpen((prevState) => !prevState);
+				if (!open && contentRef.current) {
+					contentRef.current.scrollIntoView({ behavior: 'smooth' });
+				}
+			}
+		},
+		[open]
+	);
 
 	useEffect(() => {
 		if (open) dropdownRef.current.focus();
@@ -39,6 +46,7 @@ const Dropdown = ({ title, content }) => {
 			</button>
 			<div
 				id='dropdown-content'
+				ref={contentRef}
 				className={`${styles.dropdownList} ${open ? styles.dropOpen : styles.dropClose}`}
 				aria-hidden={!open}
 			>
