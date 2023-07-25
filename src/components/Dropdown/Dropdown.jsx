@@ -25,15 +25,7 @@ const Dropdown = ({ title, content }) => {
 				aria-controls='dropdown-content'
 			>
 				<p>{title}</p>
-				<div className={styles.arrowContainer}>
-					<Image
-						src={arrowRight}
-						alt='Toggle dropdown'
-						className={`${styles.dropdownItemArrow} ${open && styles.rotated}`}
-						width={20}
-						height={20}
-					/>
-				</div>
+				<div className={`${styles.arrowContainer} ${open && styles.rotated}`} />
 			</button>
 			<div
 				id='dropdown-content'

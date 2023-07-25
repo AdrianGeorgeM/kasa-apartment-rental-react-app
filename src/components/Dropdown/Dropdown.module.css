@@ -27,13 +27,26 @@
   box-shadow: 0 0 0 3px rgba(47, 72, 88, 0.6); 
 }
 
-.dropdownItemArrow {
-  width: 26.5px;
+.arrowContainer {
+  width: 20px;
+  height: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   transition: transform 0.3s ease;
 }
 
 .rotated {
   transform: rotate(90deg);
+}
+
+.arrowContainer::before {
+  content: "";
+  width: 10px;
+  height: 10px;
+  border-top: 2px solid white;
+  border-right: 2px solid white;
+  transform: rotate(45deg);
 }
 
 .dropdownList {
@@ -55,7 +68,8 @@
 .dropOpen {
   transform: scaleY(1);
   max-height: 200px;
-  padding: 20px 15px;     margin-top: 4px;
+  padding: 20px 15px;     
+  margin-top: 4px;
   visibility: visible;
   opacity: 1;
   animation: bounce 1s; 
