@@ -41,8 +41,7 @@
   transform: scaleY(0);
   transition: transform 0.3s ease, opacity 0.2s ease, max-height 0.2s ease-in-out;
   background: #F2F4F3;
-  width: 100%; 
-  padding: 20px;  
+  padding: 20px 15px;  
   border-radius: 0 0 8px 8px;
   color: #2F4858;
   font-size: 0.9rem;
@@ -56,12 +55,10 @@
 .dropOpen {
   transform: scaleY(1);
   max-height: 200px;
-  padding: 20px 15px;
+  padding: 20px 15px;     margin-top: 4px;
   visibility: visible;
   opacity: 1;
-  width: 100%;
   animation: bounce 1s; 
-  padding: 20px;  
 }
 
 .dropClose {
